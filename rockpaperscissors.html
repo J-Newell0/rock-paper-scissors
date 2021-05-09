@@ -10,41 +10,52 @@
     
 // computerPlay function will chose a random number 0-2 and return 
 // its choice to the game() function
-    //let playerSelection;
 
-    humanPlay();
-    computerPlay();
+    let playerSelection = humanPlay();
+    let computerSelection = computerPlay();
 
-    console.log(humanPlay(playerSelection));
+    console.log(playerSelection);         // used for testing
+    console.log(computerSelection);
+   // console.log(playRound());
+
 
     function humanPlay(){
-        let playerSelection = prompt('Take your pick: Rock, Paper or Scissors:');
-        return (playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase());
+        let playerPick = prompt('Take your pick: Rock, Paper or Scissors:');
+        let playerSelection = playerPick.charAt(0).toUpperCase() + playerPick.slice(1).toLowerCase();
+        return playerSelection
     }
     function computerPlay(){
-        // let computerChoice = ['Rock', 'Paper', 'Scissors'];
-        // This doesn't seem necessary when I can have an if else
-        // choose and return the values.
+                              // let computerChoice = ['Rock', 'Paper', 'Scissors'];
+                              // This doesn't seem necessary when I can have an if else
+                              // choose and return the values.
 
-        var randomChoice = Math.floor(Math.random() * 3);
+        var randomChoice = Math.floor(Math.random() * 3);    //$$$ Change this for testing $$$
        
         if (randomChoice === 0) {
-            compChoice = 'Computer_Rock';
-           // console.log('Rock');
+            compChoice = 'Rock';
+                                           // console.log('Rock');
         } else if (randomChoice === 1) {
-            compChoice = 'Computer_Paper';
-           // console.log('Paper');
+            compChoice = 'Paper';
+                                            // console.log('Paper');
         } else if (randomChoice === 2) {
-            compChoice = 'Computer_Scissors';
-            //console.log('Scissors');
+            compChoice = 'Scissors';
+                                            //console.log('Scissors');
         }
-        console.log(compChoice);
+        //console.log(compChoice);         // used for testing
         return compChoice;
     }
-
-    function singleRound() {
-
+    
+    //playRound() should check each combo of choices and decide a winner
+    
+    function playRound(playerSelection, computerSelection) {
+      if (playerSelection == computerSelection)
+        console.log('We tied.');
+    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+      console.log(`${playerSelection} beats ${computerSelection}, Humans win!`);
+    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+      console.log(`${computerSelection} beats ${playerSelection}, Computers win!`);
     }
+      
   
 
   </script>
