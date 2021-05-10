@@ -13,10 +13,7 @@
 
     let playerSelection = humanPlay();
     let computerSelection = computerPlay();
-
-    console.log(playerSelection);         // used for testing
-    console.log(computerSelection);
-   // console.log(playRound());
+    alert(playRound(playerSelection, computerSelection));
 
 
     function humanPlay(){
@@ -27,37 +24,52 @@
     function computerPlay(){
                               // let computerChoice = ['Rock', 'Paper', 'Scissors'];
                               // This doesn't seem necessary when I can have an if else
-                              // choose and return the values.
-
-        var randomChoice = Math.floor(Math.random() * 3);    //$$$ Change this for testing $$$
+                              // choose and return the value.
+        var randomChoice = Math.floor(Math.random() * 3);  
        
         if (randomChoice === 0) {
             compChoice = 'Rock';
-                                           // console.log('Rock');
         } else if (randomChoice === 1) {
             compChoice = 'Paper';
-                                            // console.log('Paper');
         } else if (randomChoice === 2) {
             compChoice = 'Scissors';
-                                            //console.log('Scissors');
         }
-        //console.log(compChoice);         // used for testing
-        return compChoice;
+        let computerSelection = compChoice;
+        return computerSelection
     }
     
     //playRound() should check each combo of choices and decide a winner
-    
+    // --Reworking -- (if else statements were resulting in false wins and ties.)    
     function playRound(playerSelection, computerSelection) {
-      if (playerSelection == computerSelection)
-        console.log('We tied.');
-    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-      console.log(`${playerSelection} beats ${computerSelection}, Humans win!`);
-    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-      console.log(`${computerSelection} beats ${playerSelection}, Computers win!`);
-    }
+      console.log(playerSelection);
+      console.log(computerSelection);
       
-  
-
+      if (computerSelection === playerSelection) {
+        return 'We\'ve Tied'
+      }
+      if (playerSelection === 'Rock') {
+        if (computerSelection === 'Scissors') {
+          return 'Human wins! Rock beats Scissors!'
+        } else {
+          return 'Computer wins! Paper beats rock!'
+        }
+      }
+      if (playerSelection === 'Paper'){
+        if (computerSelection === 'Rock') {
+          return 'Human Wins! Paper beats rock!'
+        } else {
+          return 'Computer Wins! Scissors beats Paper!'
+        }
+      }
+      if (playerSelection === 'Scissors'){
+        if(computerSelection === 'Paper'){
+          return 'Human Wins! Sissors beat paper'
+        } else {
+          return 'Computer Wins! Rock beats scissors!'
+        }
+      }
+    }
+   
   </script>
 </body>
 </html>
