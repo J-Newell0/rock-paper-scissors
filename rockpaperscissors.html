@@ -11,10 +11,10 @@
 // computerPlay function will chose a random number 0-2 and return 
 // its choice to the game() function
 
-    let playerSelection = humanPlay();
-    let computerSelection = computerPlay();
-    alert(playRound(playerSelection, computerSelection));
-
+    let playerScore = 0;
+    let computerScore = 0;
+    let tie = 0;
+    game(playerScore, computerScore);
 
     function humanPlay(){
         let playerPick = prompt('Take your pick: Rock, Paper or Scissors:');
@@ -45,28 +45,45 @@
       console.log(computerSelection);
       
       if (computerSelection === playerSelection) {
-        return 'We\'ve Tied'
+        tie++;
+        console.log('We\'ve Tied');
       }
       if (playerSelection === 'Rock') {
         if (computerSelection === 'Scissors') {
-          return 'Human wins! Rock beats Scissors!'
+          playerScore++;
+          console.log('Human wins! Rock beats Scissors!');          
         } else {
-          return 'Computer wins! Paper beats rock!'
+          computerScore++;
+          console.log('Computer wins! Paper beats rock!');
         }
       }
       if (playerSelection === 'Paper'){
         if (computerSelection === 'Rock') {
-          return 'Human Wins! Paper beats rock!'
+          playerScore++;
+          console.log('Human Wins! Paper beats rock!');
         } else {
-          return 'Computer Wins! Scissors beats Paper!'
+          computerScore++;
+          console.log('Computer Wins! Scissors beats Paper!');
         }
       }
       if (playerSelection === 'Scissors'){
         if(computerSelection === 'Paper'){
-          return 'Human Wins! Sissors beat paper'
+          playerScore++;
+          console.log('Human Wins! Sissors beat paper');
         } else {
-          return 'Computer Wins! Rock beats scissors!'
+          computerScore++;
+          console.log('Computer Wins! Rock beats scissors!');
         }
+      }
+    }
+
+    function game(playerScore, computerScore) {
+      for (round=0; round<5; round++){
+        let playerSelection = humanPlay();
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+        console.log('Humans Score: ' + playerScore);
+        console.log('Computer Score: ' + computerScore);
       }
     }
    
