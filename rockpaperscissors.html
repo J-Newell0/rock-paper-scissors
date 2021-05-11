@@ -11,16 +11,17 @@
 // computerPlay function will chose a random number 0-2 and return 
 // its choice to the game() function
 
-    let playerScore = 0;
-    let computerScore = 0;
+    var playerScore = 0;
+    var computerScore = 0;
     let tie = 0;
-    game(playerScore, computerScore);
+    game();
 
     function humanPlay(){
         let playerPick = prompt('Take your pick: Rock, Paper or Scissors:');
         let playerSelection = playerPick.charAt(0).toUpperCase() + playerPick.slice(1).toLowerCase();
         return playerSelection
     }
+   
     function computerPlay(){
                               // let computerChoice = ['Rock', 'Paper', 'Scissors'];
                               // This doesn't seem necessary when I can have an if else
@@ -39,11 +40,7 @@
     }
     
     //playRound() should check each combo of choices and decide a winner
-    // --Reworking -- (if else statements were resulting in false wins and ties.)    
-    function playRound(playerSelection, computerSelection) {
-      console.log(playerSelection);
-      console.log(computerSelection);
-      
+    function playRound(playerSelection, computerSelection) {      
       if (computerSelection === playerSelection) {
         tie++;
         console.log('We\'ve Tied');
@@ -51,10 +48,11 @@
       if (playerSelection === 'Rock') {
         if (computerSelection === 'Scissors') {
           playerScore++;
-          console.log('Human wins! Rock beats Scissors!');          
+          console.log('Human wins! Rock beats Scissors!'); 
+               
         } else {
           computerScore++;
-          console.log('Computer wins! Paper beats rock!');
+          console.log('Computer wins! Paper beats rock!');          
         }
       }
       if (playerSelection === 'Paper'){
@@ -75,15 +73,14 @@
           console.log('Computer Wins! Rock beats scissors!');
         }
       }
+      console.log('Humans: ' + playerScore + '. Computers: ' + computerScore)
     }
 
-    function game(playerScore, computerScore) {
+    function game() {
       for (round=0; round<5; round++){
         let playerSelection = humanPlay();
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
-        console.log('Humans Score: ' + playerScore);
-        console.log('Computer Score: ' + computerScore);
       }
     }
    
