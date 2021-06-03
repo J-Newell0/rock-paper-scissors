@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copy -- Rock, Paper, Scissors!</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Rock Paper Scissors!</h1>
+  <p>We play to 5 points to determine the winner</p>
+  
+<div class='wrapperGame'>
+  <div class="playContainer">
+  <div class = "player-container"> 
+    <div class = "scores"> 
+      <h1>Humans</h1>
+      <h3>Score:</h3>
+      <h2 class = "humanScore">0</h2>
+    </div>
+    
+    <div class = 'userBtns'>
+      <button id = 'rock' class = 'choiceBtn'>
+        <img src='img/rock.jpeg' alt='rock' height="50px">
+       <h3>Rock</h3>
+      </button>
+      <button id = 'paper' class = 'choiceBtn'>
+       <img src='img/paper.jpeg' alt = 'paper' height="50px">
+       <h3>Paper</h3>
+     </button>
+     <button id = 'scissors' class = 'choiceBtn'>
+        <img src='img/scissors.jpeg' alt='scissors' height="50px">
+        <h3>Scissors</h3>
+      </button>
+    </div>
+  </div>
+    </div>
+
+  <div class="playContainer">
+  <div class = "comp-container">
+    <div class = "scores">
+      <h1>Computer</h1>
+      <h3>Score:</h3>
+      <h2 class = "compScore">0</h2>
+    </div>
+    
+    <div class = "compBtns">
+      <button class = "compRock">
+        <img src='img/rock.jpeg' alt='rock' height="50px">
+        <h3>Rock</h3>
+      </button>
+      <button class="button compPaper">
+        <img src='img/paper.jpeg' alt = 'paper' height="50px">
+        <h3>Paper</h3>
+      </button>
+      <button class="button compScissors">
+        <img src='img/scissors.jpeg' alt='scissors' height="50px">
+        <h3>Scissors</h3>
+      </button>
+    </div>
+  </div>
+    </div>
+
+  <ul class="round-result"></ul>
+</div>
+</body>
+
+
+  <script src="RPSv2.js"></script>
+</body>
+
+</html> 
