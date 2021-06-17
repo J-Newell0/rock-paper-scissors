@@ -1,0 +1,83 @@
+body{
+    background-image:url(img/herringbone/herringbone.png);
+
+}
+
+h1{
+    text-align: center;
+    font-size: 100px;
+}
+
+h2{
+    text-align: center;
+}
+
+li{
+    padding: 2px;
+}
+
+.top{
+    margin-bottom: 50px;
+}
+
+
+
+.user-buttons, .computer-buttons {
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.choicebtn {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.gameWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.play-container{
+    flex: 1;
+    border: 3px solid #1b1b1b;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    padding: 10px 3vw;
+    min-width: 400px;
+}
+
+.user-container, .computer-container{
+   display: flex;
+   align-content: center;
+}
+
+
+.scores {
+    display:flex;
+    align-content: right;
+    text-align: center;
+}
+
+.round-result {
+    display: flexbox;
+    border: 3px solid black;
+    max-width: 600px;
+    margin: auto;
+    /* justify-content: right; */
+    background-color: rgba(77, 77, 77, 0.3);
+}
+
+.refresh {
+    background-color: rgba(136, 136, 136) ;
+    /* display: flex; */
+    margin: auto;
+    border: 3px solid rgb(0, 0, 0);
+    max-width: 75px;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+} 

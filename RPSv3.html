@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="stylev3.css">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+<h1> Rock Paper Scissors!</h1>
+<h2 class= 'top'> Play until you reach 5 wins</h2>
+
+<div class='gameWrapper'>
+    
+    <section class='humans'> 
+        <div class='play-container'>
+            <h2 class='player-label'>Human</h2>
+            <div class='user-container'>
+                <div class='human-profile'></div> 
+                    <div class='scores'>
+                        <h3>Score:</h3>
+                        <h3 class='user-score'> 0</h3>
+                    </div>
+                </div>
+            
+        <div class = 'user-buttons'>
+            <button id = 'rock' class = 'choiceBtn'>
+              <img src='img/rock.jpeg' alt='rock' height="50px">
+             <h3>Rock</h3>
+            </button>
+            <button id = 'paper' class = 'choiceBtn'>
+             <img src='img/paper.jpeg' alt = 'paper' height="50px">
+             <h3>Paper</h3>
+           </button>
+           <button id = 'scissors' class = 'choiceBtn'>
+              <img src='img/scissors.jpeg' alt='scissors' height="50px">
+              <h3>Scissors</h3>
+            </button>
+          </div>
+        </div>
+    </section>
+
+    <section class='computers'>
+        <div class='play-container'>
+            <h2 class='player-label'>Computer</h2>
+            <div class='computer-container'>
+                <div class='computer-profile'></div> 
+                    <div class='scores'>
+                        <h3>Score:</h3>
+                        <h3 class='computer-score'> 0</h3>
+                    </div>
+                </div>
+            
+        <div class = 'computer-buttons'>
+            <button id = 'rock' class = 'choiceBtn'>
+              <img src='img/rock.jpeg' alt='rock' height="50px">
+             <h3>Rock</h3>
+            </button>
+            <button id = 'paper' class = 'choiceBtn'>
+             <img src='img/paper.jpeg' alt = 'paper' height="50px">
+             <h3>Paper</h3>
+           </button>
+           <button id = 'scissors' class = 'choiceBtn'>
+              <img src='img/scissors.jpeg' alt='scissors' height="50px">
+              <h3>Scissors</h3>
+            </button>
+          </div>
+        </div>
+    </section>
+</div>
+
+<script src="RPSv3.js"></script>
+</body>
+</html>
